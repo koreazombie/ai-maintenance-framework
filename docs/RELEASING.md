@@ -10,7 +10,7 @@
 4. 숨김 `.ai/`와 `.github/`, `.gitignore`, `.gitattributes`가 포함됐는지 확인한다. 특히 Mac 파일 선택에서 숨김 파일 누락을 점검한다. 파일이 완전하게 포함되는 Git 업로드를 우선 사용한다.
 5. GitHub Actions의 Package checks 결과를 확인한다. 이 검사는 문서·구성 검사이며 실제 제품 테스트가 아니다.
 6. README·INSTALL.md·LICENSE와 설치용 폴더가 올바르게 표시되는지 확인한다.
-7. 승인된 공개 커밋을 기준으로 `v0.1.0` 태그와 릴리스를 만든다. 로컬 검증과 GitHub 검증의 범위를 릴리스 설명에 적는다.
+7. 승인된 공개 커밋을 기준으로 `v0.2.0` 태그와 릴리스를 만든다. 로컬 검증과 GitHub 검증의 범위를 릴리스 설명에 적는다.
 
 웹 화면에서 첫 등록을 진행하는 방법은 [GitHub 공식 저장소 생성 안내](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository), 파일 등록은 [공식 파일 추가 안내](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)를 참고한다. 저장소 생성·업로드·태그 생성은 실제 공개 작업 범위를 확인한 뒤 수행한다.
 
@@ -29,7 +29,7 @@
 ## 첫 릴리스 설명 양식
 
 ```text
-AI Maintenance Framework v0.1.0
+AI Maintenance Framework v0.2.0
 
 기존 프로젝트의 AI 유지보수·리팩토링을 위한 한국어 작업 지침입니다.
 Claude Code/Codex 진입점, 공통 규칙, AI 적용 절차,

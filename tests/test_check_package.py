@@ -24,9 +24,9 @@ class PackageChecks(unittest.TestCase):
         self.assertEqual(errors, [])
 
     def test_missing_rule_is_rejected(self):
-        (self.root / 'framework/.ai/DATA_SAFETY.md').unlink()
+        (self.root / 'framework/.ai/rules/DATA_SAFETY.md').unlink()
         errors, _ = checker.check(self.root)
-        self.assertTrue(any('Missing required file: framework/.ai/DATA_SAFETY.md' in e for e in errors))
+        self.assertTrue(any('Missing required file: framework/.ai/rules/DATA_SAFETY.md' in e for e in errors))
         self.assertTrue(any('Broken entry reference' in e for e in errors))
 
     def test_broken_document_link_is_rejected(self):
@@ -46,6 +46,22 @@ class PackageChecks(unittest.TestCase):
             f.write('\n' + '/' + 'Users' + '/fixture/project/\n')
         errors, _ = checker.check(self.root)
         self.assertTrue(any('Personal filesystem path: README.md' in e for e in errors))
+
+    def test_scattered_payload_is_rejected(self):
+        (self.root / 'framework/templates').mkdir()
+        errors, _ = checker.check(self.root)
+        self.assertTrue(any('Scattered payload files: templates' in e for e in errors))
+
+    def test_payload_license_mismatch_is_rejected(self):
+        (self.root / 'framework/.ai/LICENSE').write_text('different license\n')
+        errors, _ = checker.check(self.root)
+        self.assertIn('Payload license differs from root LICENSE', errors)
+
+    def test_missing_privacy_policy_is_rejected(self):
+        (self.root / 'framework/.ai/PRIVACY.md').unlink()
+        errors, _ = checker.check(self.root)
+        self.assertTrue(any('Missing required file: framework/.ai/PRIVACY.md' in e for e in errors))
+        self.assertTrue(any('Broken import' in e and 'PRIVACY.md' in e for e in errors))
 
     def test_version_mismatch_is_rejected(self):
         (self.root / 'VERSION').write_text('9.9.9\n')

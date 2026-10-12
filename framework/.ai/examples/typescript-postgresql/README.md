@@ -11,7 +11,7 @@ src/
     reservations/{public,domain,application,infrastructure}/
     memberships/{public,domain,application,infrastructure}/
     payments/{public,domain,application,infrastructure}/
-contracts/reservations.md
+.ai/modules/reservations.md
 ```
 
 - reservations: 예약 생성·취소·정원·대기자 상태를 책임진다.

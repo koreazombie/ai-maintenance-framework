@@ -1,20 +1,20 @@
-# AI 개발 지침 — Claude Code 진입점
+# AI Maintenance Framework — Claude Code 진입점
 
-@.ai/CORE.md
+@.ai/PRIVACY.md
+@.ai/FRAMEWORK.md
+@.ai/rules/CORE.md
 @.ai/PROJECT.md
-@.ai/WORKFLOW.md
+@.ai/rules/WORKFLOW.md
 
-위 공통 규칙을 적용한다. 작업 대상의 모듈 설명·계약·기존 테스트와 적용되는 하위 지침도 읽는다.
+추가 문서는 필요할 때 직접 읽는다. 변경 대상의 `.ai/modules/` 설명·계약과 실제 코드·테스트·적용되는 하위 지침도 확인한다.
 
-## 작업에 따른 추가 문서
+- 기능·구조·모듈 간 호출: `.ai/rules/ARCHITECTURE.md`, `.ai/rules/MODULE_BOUNDARY.md`, `.ai/rules/CONTRACT_FIRST.md`
+- 영속 상태·DB: `.ai/rules/DATA_SAFETY.md`
+- 검증: `.ai/rules/VERIFICATION.md`, `.ai/verification/CHECKLIST.md`
+- 내부 교체: `.ai/rules/REGENERATION.md` 및 관련 문서
 
-- 새 기능·구조·모듈 간 호출: `.ai/ARCHITECTURE.md`, `.ai/MODULE_BOUNDARY.md`, `.ai/CONTRACT_FIRST.md`
-- DB·마이그레이션·영속 상태: `.ai/DATA_SAFETY.md`
-- 버그·기능·재생성 검증: `.ai/VERIFICATION.md`, `verification/CHECKLIST.md`
-- 모듈 교체: `.ai/REGENERATION.md` 및 위 모든 관련 문서
+`.ai/`가 없거나 누락되면 설치/동기화 필요를 알리고, 미확인 지침·설정을 지어내지 않는다. Git에서 제외된 `.ai/`도 명시적 경로로 직접 읽는다.
 
-추가 문서는 필요할 때 직접 열어 읽는다. 경로를 적었다는 이유만으로 내용이 로드됐다고 가정하지 않는다. 파일 누락은 관련 코드와 실제 설정을 조사해 보고하고, 미확인 명령과 계약을 지어내지 않는다.
+설명·계약·양식·검증 기준·작업 기록은 `.ai/`에 모은다. 실제 제품 코드·실행 테스트·API 스키마는 프로젝트 경로를 유지한다. 지침 관리 선택을 보존하고 로컬 비공개 파일을 임의로 스테이징·커밋·푸시하지 않는다.
 
-작은 수정 우선, 위험도에 따른 검증, 외부 계약·데이터 보존, 검증 결과의 정직한 보고가 기본이다. 상세 규칙은 공통 문서에 둔다.
-
-실제 도구의 지침 우선순위와 승인·샌드박스 정책을 따른다. 이 파일은 상위 지침이나 도구 권한을 변경하지 않는다. 사용자 요청과 저장소 규칙의 충돌은 구체적으로 설명하고, 명확히 허가된 범위에서 진행한다.
+PATCH 우선/실용형 정책을 적용한다. 실제 도구의 상위 지침·권한·승인 정책을 따른다. 이 파일은 권한을 확대하지 않는다.

@@ -4,7 +4,7 @@
 
 사용자는 원하는 변경을 설명합니다. AI는 프로젝트를 조사하고, 기존 동작과 데이터를 보호하면서 작업하도록 지침을 적용합니다. 사람이 작성한 코드와 AI가 작성한 코드 모두에 사용할 수 있습니다.
 
-한국어 기본형 · 공개 배포 버전 **0.1.0** · [MIT License](LICENSE)
+한국어 기본형 · 공개 배포 버전 **0.2.0** · [MIT License](LICENSE)
 
 ## 바로 사용하기
 
@@ -24,6 +24,30 @@
 ```
 
 AI가 주소의 파일을 읽을 수 없다면 저장소를 다운로드하고 폴더 위치를 알려 주세요. 프로젝트 코드에 접근할 수 없는 일반 대화에서는 실제 파일 적용이 불가능합니다. 코드에 접근할 수 있는 개발 도구에서 사용하세요.
+
+설치 중 AI가 지침을 공개 코드와 함께 관리할지, 로컬 또는 별도 비공개로 관리할지 확인합니다. 공개 저장소에서도 지침은 비공개로 유지할 수 있습니다. 선택하면 관련 설정을 AI가 처리합니다.
+
+설치 결과는 다음과 같습니다.
+
+```text
+프로젝트/
+  CLAUDE.md
+  AGENTS.md
+  .ai/
+    rules/
+    modules/
+    templates/
+    verification/
+    changes/
+    docs/
+    examples/
+    PROJECT.md
+    FRAMEWORK.md
+    PRIVACY.md
+    LICENSE
+```
+
+프레임워크가 생성하는 문서는 `.ai/`에 모읍니다. 제품 코드·실행 테스트·공개 API 스키마는 기존 위치를 유지합니다. Git에서 제외한 `.ai/`는 다른 컴퓨터에 따로 설치하거나 동기화해야 합니다.
 
 적용한 뒤에는 평소처럼 요청합니다.
 
@@ -62,11 +86,11 @@ AI가 주소의 파일을 읽을 수 없다면 저장소를 다운로드하고 �
 | 경로 | 대상 |
 |---|---|
 | [INSTALL.md](INSTALL.md) | 프로젝트 적용을 맡은 AI가 읽는 절차 |
-| [framework/](framework/README.md) | 실제 프로젝트에 적용할 지침과 양식 |
-| [적용 가이드](framework/APPLY.md) | 자세한 도입 방법 |
-| [요청문 모음](framework/PROMPTS.md) | 기능 변경·버그 수정·검토 요청 예시 |
-| [검증 체크리스트](framework/verification/CHECKLIST.md) | 변경 확인 기준 |
-| [예시](framework/examples/typescript-postgresql/README.md) | 가상 예약·회원권 설계 |
+| [framework/](framework/.ai/docs/README.md) | 실제 프로젝트에 적용할 지침과 양식 |
+| [적용 가이드](framework/.ai/docs/APPLY.md) | 자세한 도입 방법 |
+| [요청문 모음](framework/.ai/docs/PROMPTS.md) | 기능 변경·버그 수정·검토 요청 예시 |
+| [검증 체크리스트](framework/.ai/verification/CHECKLIST.md) | 변경 확인 기준 |
+| [예시](framework/.ai/examples/typescript-postgresql/README.md) | 가상 예약·회원권 설계 |
 | [FAQ](docs/FAQ.md) | 자주 묻는 질문 |
 | [참여 방법](CONTRIBUTING.md) | 규칙 개선과 기여 |
 
@@ -74,4 +98,4 @@ AI가 주소의 파일을 읽을 수 없다면 저장소를 다운로드하고 �
 
 Markdown 지침은 실행 차단 장치가 아닙니다. 실제 테스트·CI·DB 권한은 프로젝트에 연결해야 합니다. 저장소의 자동 검사는 배포 문서와 파일 참조를 확인하며 제품 코드의 품질을 보증하지 않습니다.
 
-[버전 변경 기록](CHANGELOG.md) · [출처](framework/SOURCES.md) · [라이선스](LICENSE)
+[기존 버전 이전 안내](docs/MIGRATING-0.2.md) · [버전 변경 기록](CHANGELOG.md) · [출처](framework/.ai/docs/SOURCES.md) · [라이선스](LICENSE)

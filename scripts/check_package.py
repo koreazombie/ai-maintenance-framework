@@ -6,20 +6,31 @@ import sys
 from urllib.parse import unquote
 
 RULES = ('CORE', 'ARCHITECTURE', 'MODULE_BOUNDARY', 'CONTRACT_FIRST',
-         'DATA_SAFETY', 'VERIFICATION', 'REGENERATION', 'WORKFLOW', 'PROJECT')
+         'DATA_SAFETY', 'VERIFICATION', 'REGENERATION', 'WORKFLOW')
 REQUIRED = ('README.md', 'INSTALL.md', 'LICENSE', 'NOTICE.md', 'VERSION',
             'AGENTS.md', 'CLAUDE.md', 'release.json', 'CONTRIBUTING.md',
             'framework/AGENTS.md', 'framework/CLAUDE.md',
-            'framework/verification/CHECKLIST.md', 'framework/verification/GATES.md',
-            'framework/templates/PROJECT.md', 'framework/templates/CONTRACT.md')
+            'framework/.ai/verification/CHECKLIST.md', 'framework/.ai/verification/GATES.md',
+            'framework/.ai/templates/PROJECT.md', 'framework/.ai/templates/CONTRACT.md',
+            'framework/.ai/PROJECT.md', 'framework/.ai/PRIVACY.md',
+            'framework/.ai/FRAMEWORK.md', 'framework/.ai/LICENSE',
+            'framework/.ai/docs/README.md', 'docs/MIGRATING-0.2.md')
 
 
 def check(root):
     root = Path(root).resolve()
     errors = []
-    for name in (*REQUIRED, *(f'framework/.ai/{rule}.md' for rule in RULES)):
+    for name in (*REQUIRED, *(f'framework/.ai/rules/{rule}.md' for rule in RULES)):
         if not (root / name).is_file():
             errors.append(f'Missing required file: {name}')
+    payload = root / 'framework'
+    if payload.is_dir():
+        extra = {p.name for p in payload.iterdir()} - {'AGENTS.md', 'CLAUDE.md', '.ai'}
+        if extra:
+            errors.append('Scattered payload files: ' + ', '.join(sorted(extra)))
+    if (payload / '.ai/LICENSE').is_file() and (root / 'LICENSE').is_file():
+        if (payload / '.ai/LICENSE').read_bytes() != (root / 'LICENSE').read_bytes():
+            errors.append('Payload license differs from root LICENSE')
     files = [p for p in root.rglob('*') if p.is_file()
              and not any(part in {'.git', '__pycache__', '.venv'}
                          for part in p.relative_to(root).parts)]

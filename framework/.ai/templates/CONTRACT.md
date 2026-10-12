@@ -1,6 +1,6 @@
 # <모듈/행동> 계약
 
-복사 대상: `contracts/<module>.md`
+복사 대상: `.ai/modules/<module>/CONTRACT.md`
 버전: <버전> · 상태: 초안/확인됨 · 소유자: <역할> · 소비자: <목록>
 
 ## 책임과 관찰 가능한 행동

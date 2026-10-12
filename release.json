@@ -1,7 +1,7 @@
 {
   "name": "AI Maintenance Framework",
   "repository_name": "ai-maintenance-framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "language": "ko",
   "default_change_strategy": "PATCH-first",
@@ -13,5 +13,11 @@
   ],
   "payload": "framework",
   "publication_status": "published",
-  "repository_url": "https://github.com/koreazombie/ai-maintenance-framework"
+  "repository_url": "https://github.com/koreazombie/ai-maintenance-framework",
+  "installed_layout": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    ".ai/"
+  ],
+  "guidance_visibility": "explicit-user-choice"
 }

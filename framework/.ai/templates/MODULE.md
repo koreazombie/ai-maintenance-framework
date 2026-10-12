@@ -1,6 +1,6 @@
 # <모듈명>
 
-복사 대상: 실제 모듈의 `README.md`
+복사 대상: `.ai/modules/<module>/README.md`
 
 - 책임 한 문장: <내용>
 - 비범위: <내용>
