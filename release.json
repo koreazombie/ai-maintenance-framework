@@ -1,0 +1,17 @@
+{
+  "name": "AI Maintenance Framework",
+  "repository_name": "ai-maintenance-framework",
+  "version": "0.1.0",
+  "license": "MIT",
+  "language": "ko",
+  "default_change_strategy": "PATCH-first",
+  "process": "pragmatic",
+  "scope": [
+    "maintenance",
+    "refactoring",
+    "module-rebuild"
+  ],
+  "payload": "framework",
+  "publication_status": "published",
+  "repository_url": "https://github.com/koreazombie/ai-maintenance-framework"
+}
