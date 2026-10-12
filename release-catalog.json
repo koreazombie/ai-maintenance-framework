@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "version": "0.3.0",
+  "profiles": {
+    "solo": {
+      "label": "스크립트/솔로",
+      "files": [
+        {
+          "source": "framework/.ai/profile-templates/solo/PROJECT.md",
+          "target": ".ai/PROJECT.md",
+          "mutable": true,
+          "sha256": "64f53e6a292aadf05cf5ef2c1c8be83dbe73406e3a4c46e8d926e8d4dfca768c"
+        },
+        {
+          "source": "framework/.ai/profile-templates/solo/CORE.md",
+          "target": ".ai/rules/CORE.md",
+          "mutable": false,
+          "sha256": "7b5156b60a3449e41f692101a9ac383d0de52642453fe765185a5f0802e76263"
+        },
+        {
+          "source": "framework/.ai/profile-templates/solo/WORKFLOW.md",
+          "target": ".ai/rules/WORKFLOW.md",
+          "mutable": false,
+          "sha256": "c9e241c5f5aab894b139b008f73f2fc18a332b4ef72fd88daa67c5d02a778b78"
+        },
+        {
+          "source": "framework/AGENTS.md",
+          "target": "AGENTS.md",
+          "mutable": true,
+          "sha256": "2531b2330cfb7c2ca515bceb83bd93d4f1032a7258e4b2236b408bc544c145a5"
+        },
+        {
+          "source": "framework/CLAUDE.md",
+          "target": "CLAUDE.md",
+          "mutable": true,
+          "sha256": "fb7e9e1164bfe2a00a49d514bd1f680188194f1b74a0767a95b7faeba0743b90"
+        },
+        {
+          "source": "LICENSE",
+          "target": ".ai/LICENSE",
+          "mutable": false,
+          "sha256": "084988ae5074480e09bfdd52b8eff057ef18d74f9e91619b34e6cbd2709396be"
+        },
+        {
+          "source": "scripts/validate_installation.py",
+          "target": ".ai/tools/validate_installation.py",
+          "mutable": false,
+          "sha256": "05410b4e7071126c0c17547a59621f969a384a28db7ccd91d717765f8c948064"
+        }
+      ]
+    },
+    "modular": {
+      "label": "앱/모듈형",
+      "files": [
+        {
+          "source": "framework/.ai/FRAMEWORK.md",
+          "target": ".ai/FRAMEWORK.md",
+          "mutable": true,
+          "sha256": "7ff479adf03c91ddba362a4d52c50369c36c1e46ec064cd4e283b89bc8bf6af6"
+        },
+        {
+          "source": "framework/.ai/PRIVACY.md",
+          "target": ".ai/PRIVACY.md",
+          "mutable": true,
+          "sha256": "2dbae06e7c7d0297527dad4dca1f0b94d4b41172bb419bd1e5b68b98a4a93af5"
+        },
+        {
+          "source": "framework/.ai/PROJECT.md",
+          "target": ".ai/PROJECT.md",
+          "mutable": true,
+          "sha256": "fc7dff87dd7b3db2700b8667a26f3cb2472a47c8cf6a4a78f653198bb3f6c29e"
+        },
+        {
+          "source": "framework/.ai/changes/README.md",
+          "target": ".ai/changes/README.md",
+          "mutable": false,
+          "sha256": "db9cee6b859bbda8b4fb694b1e9dfa42a2fea63a12710aa23595e7eed68ef9df"
+        },
+        {
+          "source": "framework/.ai/modules/README.md",
+          "target": ".ai/modules/README.md",
+          "mutable": false,
+          "sha256": "b40cd6495c5a5bbd49ce865bbf62560d32e7980350e98cb6b45ccce0d1ab4acd"
+        },
+        {
+          "source": "framework/.ai/rules/ARCHITECTURE.md",
+          "target": ".ai/rules/ARCHITECTURE.md",
+          "mutable": false,
+          "sha256": "e1720d7703954f37434a43a583151543a69df4dfb2e120988bd79b5270c80632"
+        },
+        {
+          "source": "framework/.ai/rules/CONTRACT_FIRST.md",
+          "target": ".ai/rules/CONTRACT_FIRST.md",
+          "mutable": false,
+          "sha256": "a5b49f3da78287781c38391b59a230fcb62ca69d941a9c7f5cc8427dc7465b04"
+        },
+        {
+          "source": "framework/.ai/rules/CORE.md",
+          "target": ".ai/rules/CORE.md",
+          "mutable": false,
+          "sha256": "99d4d80519b80e6e4797aca79594642aada4a4d74dd4771f37f1a5440229195b"
+        },
+        {
+          "source": "framework/.ai/rules/DATA_SAFETY.md",
+          "target": ".ai/rules/DATA_SAFETY.md",
+          "mutable": false,
+          "sha256": "3a443a80a5ea7d67ce666e57ebda58ae677a009d23d71c51a51a3dbca33b5ef2"
+        },
+        {
+          "source": "framework/.ai/rules/MODULE_BOUNDARY.md",
+          "target": ".ai/rules/MODULE_BOUNDARY.md",
+          "mutable": false,
+          "sha256": "f1ed9ccb0f05d1ed6caea8780e5a3380be9818b549c918a5f7daaf4d987a7810"
+        },
+        {
+          "source": "framework/.ai/rules/REGENERATION.md",
+          "target": ".ai/rules/REGENERATION.md",
+          "mutable": false,
+          "sha256": "36cfd25f80683425a257fbe5ba08536b596065e2cdb28db6641cb67607b1bd58"
+        },
+        {
+          "source": "framework/.ai/rules/VERIFICATION.md",
+          "target": ".ai/rules/VERIFICATION.md",
+          "mutable": false,
+          "sha256": "8f99a785c3c437f127d5da3dfdda1881365ad9214033d2cb5298ffdae56d4b1f"
+        },
+        {
+          "source": "framework/.ai/rules/WORKFLOW.md",
+          "target": ".ai/rules/WORKFLOW.md",
+          "mutable": false,
+          "sha256": "36742dd4c91ec37e8190e7e95e8bdba1f2d0d02f1bb5798f9f6f5f7e296a1511"
+        },
+        {
+          "source": "framework/.ai/templates/ADR.md",
+          "target": ".ai/templates/ADR.md",
+          "mutable": false,
+          "sha256": "21d1c6aa1da80a9113cc22b7ac858af6afc9f044527fd01628d88ce91af6324d"
+        },
+        {
+          "source": "framework/.ai/templates/CHANGE.md",
+          "target": ".ai/templates/CHANGE.md",
+          "mutable": false,
+          "sha256": "301ac126ecb7aa5b8c7bd33b3a0fdd9147fdb8a5db06e7a3682bddffbbe5378c"
+        },
+        {
+          "source": "framework/.ai/templates/CONTRACT.md",
+          "target": ".ai/templates/CONTRACT.md",
+          "mutable": false,
+          "sha256": "8d78f2aef37ab7863afd5ebb0dbd3437c2ea1cfb4334f4ed67d7f0b7684431f4"
+        },
+        {
+          "source": "framework/.ai/templates/MIGRATION.md",
+          "target": ".ai/templates/MIGRATION.md",
+          "mutable": false,
+          "sha256": "0c7ddb60e4a2a52666897fe84d39d345de04d2ef07d434098e4fc1aaf93fef48"
+        },
+        {
+          "source": "framework/.ai/templates/MODULE.md",
+          "target": ".ai/templates/MODULE.md",
+          "mutable": false,
+          "sha256": "9ff1b30411156dd506023198585b53f028c2074e43bd6613c244ba3b4c736427"
+        },
+        {
+          "source": "framework/.ai/templates/PROJECT.md",
+          "target": ".ai/templates/PROJECT.md",
+          "mutable": false,
+          "sha256": "8ffd011c1a18824d8dc7e61632cc9c3fe573c8f5decd1caa9a2ba9668bff2654"
+        },
+        {
+          "source": "framework/.ai/verification/CHECKLIST.md",
+          "target": ".ai/verification/CHECKLIST.md",
+          "mutable": false,
+          "sha256": "54cbd22be82a7f5bf2919024b8360ec72d8f98f0384d5e28fe985604bbe1d1bf"
+        },
+        {
+          "source": "framework/.ai/verification/GATES.md",
+          "target": ".ai/verification/GATES.md",
+          "mutable": false,
+          "sha256": "7a8c9a6d71d31b9d4a6d19f022b124598e91d434c4c49564cf79b3588d253258"
+        },
+        {
+          "source": "framework/AGENTS.md",
+          "target": "AGENTS.md",
+          "mutable": true,
+          "sha256": "2531b2330cfb7c2ca515bceb83bd93d4f1032a7258e4b2236b408bc544c145a5"
+        },
+        {
+          "source": "framework/CLAUDE.md",
+          "target": "CLAUDE.md",
+          "mutable": true,
+          "sha256": "fb7e9e1164bfe2a00a49d514bd1f680188194f1b74a0767a95b7faeba0743b90"
+        },
+        {
+          "source": "LICENSE",
+          "target": ".ai/LICENSE",
+          "mutable": false,
+          "sha256": "084988ae5074480e09bfdd52b8eff057ef18d74f9e91619b34e6cbd2709396be"
+        },
+        {
+          "source": "scripts/validate_installation.py",
+          "target": ".ai/tools/validate_installation.py",
+          "mutable": false,
+          "sha256": "05410b4e7071126c0c17547a59621f969a384a28db7ccd91d717765f8c948064"
+        }
+      ]
+    }
+  }
+}

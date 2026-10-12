@@ -27,7 +27,7 @@ class PackageChecks(unittest.TestCase):
         (self.root / 'framework/.ai/rules/DATA_SAFETY.md').unlink()
         errors, _ = checker.check(self.root)
         self.assertTrue(any('Missing required file: framework/.ai/rules/DATA_SAFETY.md' in e for e in errors))
-        self.assertTrue(any('Broken entry reference' in e for e in errors))
+        self.assertTrue(any('Invalid profile catalog' in e for e in errors))
 
     def test_broken_document_link_is_rejected(self):
         with (self.root / 'README.md').open('a') as f:
@@ -61,7 +61,13 @@ class PackageChecks(unittest.TestCase):
         (self.root / 'framework/.ai/PRIVACY.md').unlink()
         errors, _ = checker.check(self.root)
         self.assertTrue(any('Missing required file: framework/.ai/PRIVACY.md' in e for e in errors))
-        self.assertTrue(any('Broken import' in e and 'PRIVACY.md' in e for e in errors))
+        self.assertTrue(any('Invalid profile catalog' in e for e in errors))
+
+    def test_stale_release_catalog_is_rejected(self):
+        with (self.root / 'scripts/validate_installation.py').open('a') as f:
+            f.write('\n# source drift\n')
+        errors, _ = checker.check(self.root)
+        self.assertIn('Release profile catalog differs from actual source files', errors)
 
     def test_version_mismatch_is_rejected(self):
         (self.root / 'VERSION').write_text('9.9.9\n')

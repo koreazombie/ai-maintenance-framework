@@ -1,6 +1,7 @@
 """Offline structural checks; does not validate product behavior or live AI loading."""
 from pathlib import Path
 import json
+import importlib.util
 import re
 import sys
 from urllib.parse import unquote
@@ -14,7 +15,10 @@ REQUIRED = ('README.md', 'INSTALL.md', 'LICENSE', 'NOTICE.md', 'VERSION',
             'framework/.ai/templates/PROJECT.md', 'framework/.ai/templates/CONTRACT.md',
             'framework/.ai/PROJECT.md', 'framework/.ai/PRIVACY.md',
             'framework/.ai/FRAMEWORK.md', 'framework/.ai/LICENSE',
-            'framework/.ai/docs/README.md', 'docs/MIGRATING-0.2.md')
+            'framework/.ai/docs/README.md', 'docs/MIGRATING-0.2.md',
+            'profiles.json', 'release-catalog.json', 'scripts/validate_installation.py',
+            'scripts/record_installation.py', 'scripts/generate_catalog.py',
+            'docs/MIGRATING-0.3.md', 'examples/single-script/README.md')
 
 
 def check(root):
@@ -82,6 +86,14 @@ def check(root):
             errors.append('License metadata differs from LICENSE')
     except (OSError, ValueError, KeyError) as exc:
         errors.append(f'Invalid release metadata: {exc}')
+    try:
+        spec = importlib.util.spec_from_file_location('release_catalog_checker', root / 'scripts/generate_catalog.py')
+        catalog_checker = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(catalog_checker)
+        if (root / 'release-catalog.json').read_text() != catalog_checker.serialized(root):
+            errors.append('Release profile catalog differs from actual source files')
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        errors.append(f'Invalid profile catalog: {exc}')
     return errors, {'files': len(files), 'local_links': links, 'imports': imports}
 
 

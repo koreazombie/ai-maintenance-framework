@@ -1,7 +1,7 @@
 {
   "name": "AI Maintenance Framework",
   "repository_name": "ai-maintenance-framework",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "language": "ko",
   "default_change_strategy": "PATCH-first",
@@ -19,5 +19,9 @@
     "AGENTS.md",
     ".ai/"
   ],
-  "guidance_visibility": "explicit-user-choice"
+  "guidance_visibility": "shared/local-guidance/private-sync/local-all",
+  "profiles": [
+    "solo",
+    "modular"
+  ]
 }

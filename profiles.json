@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "version": "0.3.0",
+  "profiles": {
+    "solo": {
+      "label": "스크립트/솔로",
+      "description": "단일 스크립트 또는 작은 도구; DB·복수 업무 모듈이 핵심이 아닌 프로젝트",
+      "files": [
+        {
+          "source": "framework/.ai/profile-templates/solo/PROJECT.md",
+          "target": ".ai/PROJECT.md",
+          "mutable": true
+        },
+        {
+          "source": "framework/.ai/profile-templates/solo/CORE.md",
+          "target": ".ai/rules/CORE.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/profile-templates/solo/WORKFLOW.md",
+          "target": ".ai/rules/WORKFLOW.md",
+          "mutable": false
+        }
+      ]
+    },
+    "modular": {
+      "label": "앱/모듈형",
+      "description": "영속 데이터·권한·여러 업무 경계 또는 모듈 교체가 중요한 앱",
+      "files": [
+        {
+          "source": "framework/.ai/FRAMEWORK.md",
+          "target": ".ai/FRAMEWORK.md",
+          "mutable": true
+        },
+        {
+          "source": "framework/.ai/PRIVACY.md",
+          "target": ".ai/PRIVACY.md",
+          "mutable": true
+        },
+        {
+          "source": "framework/.ai/PROJECT.md",
+          "target": ".ai/PROJECT.md",
+          "mutable": true
+        },
+        {
+          "source": "framework/.ai/changes/README.md",
+          "target": ".ai/changes/README.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/modules/README.md",
+          "target": ".ai/modules/README.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/ARCHITECTURE.md",
+          "target": ".ai/rules/ARCHITECTURE.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/CONTRACT_FIRST.md",
+          "target": ".ai/rules/CONTRACT_FIRST.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/CORE.md",
+          "target": ".ai/rules/CORE.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/DATA_SAFETY.md",
+          "target": ".ai/rules/DATA_SAFETY.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/MODULE_BOUNDARY.md",
+          "target": ".ai/rules/MODULE_BOUNDARY.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/REGENERATION.md",
+          "target": ".ai/rules/REGENERATION.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/VERIFICATION.md",
+          "target": ".ai/rules/VERIFICATION.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/rules/WORKFLOW.md",
+          "target": ".ai/rules/WORKFLOW.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/ADR.md",
+          "target": ".ai/templates/ADR.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/CHANGE.md",
+          "target": ".ai/templates/CHANGE.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/CONTRACT.md",
+          "target": ".ai/templates/CONTRACT.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/MIGRATION.md",
+          "target": ".ai/templates/MIGRATION.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/MODULE.md",
+          "target": ".ai/templates/MODULE.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/templates/PROJECT.md",
+          "target": ".ai/templates/PROJECT.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/verification/CHECKLIST.md",
+          "target": ".ai/verification/CHECKLIST.md",
+          "mutable": false
+        },
+        {
+          "source": "framework/.ai/verification/GATES.md",
+          "target": ".ai/verification/GATES.md",
+          "mutable": false
+        }
+      ]
+    }
+  }
+}

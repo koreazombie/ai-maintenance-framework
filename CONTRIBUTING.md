@@ -8,8 +8,10 @@
 4. 아래 검사를 실행하고 결과를 PR에 기록한다.
 
 ```sh
+python3 scripts/generate_catalog.py --check
 python3 scripts/check_package.py
 python3 -m unittest discover -s tests -v
+python3 -m unittest discover -s examples/single-script -v
 ```
 
 문서 검사는 파일·참조·구성의 일부만 검증한다. 규칙의 타당성이나 적용 프로젝트의 안전성을 자동 보장하지 않는다.
@@ -17,3 +19,5 @@ python3 -m unittest discover -s tests -v
 작은 작업에 불필요한 의식적 절차를 추가하지 않는다. PATCH 우선/실용형 정책을 바꾸는 제안은 이유와 비용·효과를 먼저 설명한다. 실제 제품의 고객 데이터·토큰·접속문자열·개인 대화는 올리지 않는다.
 
 기여한 내용은 저장소의 MIT 라이선스로 제공할 권한을 가진 내용이어야 한다. 외부 문서 본문을 복사하기보다 공식 링크와 직접 작성한 설명을 사용한다.
+
+프로파일·규칙·검사기를 변경했다면 검토 후 `python3 scripts/generate_catalog.py` 로 release-catalog.json을 갱신하고 --check와 설치 검사를 확인한다.
